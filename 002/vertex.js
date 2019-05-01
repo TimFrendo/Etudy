@@ -21,6 +21,7 @@ class Vertex{
   }
 
   draw(){
+    noStroke();
     fill(this.color);
     ellipse(this.x, this.y, this.diameter);
     this.showName();
@@ -38,6 +39,12 @@ class Vertex{
     textSize(this.diameter/2);
     textAlign(CENTER, CENTER);
     text(this.name, this.x, this.y);
+  }
+
+  drawEdge(vertex) {
+    stroke('red');
+    strokeWeight(4);
+    line(this.x, this.y, vertex.x, vertex.y);
   }
 
 }
