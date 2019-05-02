@@ -5,7 +5,8 @@ class Vertex{
     this.y = y;
     this.diameter = 50;
     this.color = 255;
-    this.name = 'AA';
+    this.dict = {name : 'a', iter : 0};
+    //this.dict = new Map();
   }
  
   setDiameter(diameter){
@@ -16,8 +17,9 @@ class Vertex{
     this.color = color;
   }
   
-  setName(name){
-    this.name = name;
+  setName(name, iter){
+    this.dict = {name : name, iter : iter};
+    //this.dict.set(iter, name);
   }
 
   draw(){
@@ -38,7 +40,7 @@ class Vertex{
     fill(this.color - this.color);
     textSize(this.diameter/2);
     textAlign(CENTER, CENTER);
-    text(this.name, this.x, this.y);
+    text(this.dict.name, this.x, this.y);
   }
 
   drawEdge(vertex) {
@@ -46,5 +48,6 @@ class Vertex{
     strokeWeight(4);
     line(this.x, this.y, vertex.x, vertex.y);
   }
+
 
 }
