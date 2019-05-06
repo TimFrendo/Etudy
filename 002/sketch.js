@@ -24,7 +24,7 @@
   let boundary = [];
   
   let adj = [];
-  let k = 0;
+  let keys = [];
   
   function setup() {
     createCanvas(400, 400);
@@ -50,11 +50,15 @@
        let s = split(line, ' ');       
       addEdge(index(s[0]), index(s[1]))
     }
-    print(boundary)
+
+    for(let key of b.keys()){
+      keys[b.get(key)] = key;
+    }
+    
     print(b)
    
     print(adj)
-    
+    print(keys)
   }
   
   function draw() {
