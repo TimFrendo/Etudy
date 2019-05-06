@@ -5,10 +5,13 @@ class Vertex{
     this.y = y;
     this.diameter = 50;
     this.color = 255;
-    this.dict = {name : 'a', iter : 0};
-    //this.dict = new Map();
+    this.name = "AA"    
   }
  
+  setXY(x, y){
+    this.x = x;
+    this.y = y;
+  }
   setDiameter(diameter){
     this.diameter = diameter;
   }
@@ -17,9 +20,8 @@ class Vertex{
     this.color = color;
   }
   
-  setName(name, iter){
-    this.dict = {name : name, iter : iter};
-    //this.dict.set(iter, name);
+  setName(name){
+    this.name = name;
   }
 
   draw(){
@@ -32,15 +34,17 @@ class Vertex{
   clicked(x, y){
     let d = dist(this.x, this.y, x, y);    
     if(d <= this.diameter/2){
-      print('it is vertex');
+      //print('it is vertex');
+      return true;
     }
+    return false
   }
 
   showName(){
     fill(this.color - this.color);
     textSize(this.diameter/2);
     textAlign(CENTER, CENTER);
-    text(this.dict.name, this.x, this.y);
+    text(this.name, this.x, this.y);
   }
 
   drawEdge(vertex) {
