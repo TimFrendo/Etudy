@@ -35,9 +35,17 @@ class Vertex{
     let d = dist(this.x, this.y, x, y);    
     if(d <= this.diameter/2){
       //print('it is vertex');
-      return true;
+      return true
     }
     return false
+  }
+
+  intersection(vertex){
+    let d = dist(this.x, this.y, vertex.x, vertex.y);
+    if(d <= this.diameter)
+      return true
+    else 
+      return false
   }
 
   showName(){
